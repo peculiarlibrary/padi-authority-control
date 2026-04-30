@@ -14,25 +14,27 @@ graph TD
         SMG["S. M. Gitandu (The Peculiar Librarian)"]
     end
 
-    subgraph Authority_Clusters [PADI Depth Index]
-        LIS["Librarianship (Depth 5)"]
-        ONT["Ontology Engineering (Depth 4)"]
-        MCK["McKinsey Forward (Depth 3)"]
+    subgraph Knowledge_Pillars [Technical Mastery Clusters]
+        KA["Knowledge Architecture (Depth 4)"]
+        KE["Knowledge Engineering (Depth 4)"]
+        KM["Knowledge Management (Depth 4)"]
     end
 
-    subgraph Physical_Node [Nairobi Infrastructure]
-        HW["Nairobi Primary Storage (1.5TB)"]
+    subgraph Authority_Clusters [Contextual Expertise]
+        LIS["Librarianship (Depth 5)"]
+        MCK["McKinsey Forward (Depth 3)"]
     end
 
     KU --> SMG
     SMG --> LIS
-    SMG --> ONT
     SMG --> MCK
-    SMG --> HW
+    SMG --> KA
+    SMG --> KE
+    SMG --> KM
 
-    LIS --> |Validates| LML["LinkML Schema"]
-    ONT --> |Enforces| SHC["SHACL Constraints"]
-    MCK --> |Orchestrates| JLD["JSON-LD Context"]
+    KA --> |Design| LML["LinkML Schema"]
+    KE --> |Enforce| SHC["SHACL Constraints"]
+    KM --> |Govern| JLD["JSON-LD Context"]
 ```
 
 ## Core Mandate: Constraint Sovereignty
@@ -41,7 +43,7 @@ Following the "Librarian’s Mandate," this bureau prioritizes structure and sem
 ## Bureau Structure (MECE Architecture)
 * **src/**: The "DNA" containing the LinkML schema.
 * **project/**: The "Law" containing SHACL shapes and JSON-LD contexts.
-* **data/**: The "Archive" containing validated records for milestones and hardware.
+* **data/**: The "Archive" containing validated records for milestones, skills, and hardware.
 * **docs/**: The "Ledger" containing generated documentation.
 
 ## About the Architect
