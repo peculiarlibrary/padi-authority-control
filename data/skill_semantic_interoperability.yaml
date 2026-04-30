@@ -1,0 +1,5 @@
+id: "padi:skill-semantic-interoperability"
+label: "Semantic Interoperability"
+depth_index: "4"
+source: "LinkML/SHACL Deterministic Framework"
+status: "Verified"
