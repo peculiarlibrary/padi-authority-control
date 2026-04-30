@@ -1,0 +1,5 @@
+id: "padi:hardware-node-01"
+label: "Nairobi Node Primary Storage"
+depth_index: "5"
+source: "Local Hardware Manifest: 1.5TB Total (1TB Internal, 500GB External)"
+status: "Operational"
