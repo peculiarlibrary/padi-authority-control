@@ -1,0 +1,36 @@
+id: https://gitandu.com/padi/padi-schema
+name: PADI_Sovereign_Bureau
+prefixes:
+  padi: https://gitandu.com/padi/
+  dc: http://purl.org/dc/terms/
+  skos: http://www.w3.org/2004/02/skos/core#
+  schema: http://schema.org/
+default_prefix: padi
+
+classes:
+  AuthorityRecord:
+    description: A deterministic knowledge chunk.
+    class_uri: skos:Concept
+    attributes:
+      id:
+        identifier: true
+      title:
+        slot_uri: dc:title
+        required: true
+      depth_index:
+        range: integer
+        required: true
+      status:
+        description: Verification status.
+        range: string
+
+  Agent:
+    description: An active archive reasoning loop.
+    class_uri: schema:SoftwareAgent
+    attributes:
+      id:
+        identifier: true
+      name:
+        slot_uri: schema:name
+      mandate:
+        description: The primary constraint of the agent.

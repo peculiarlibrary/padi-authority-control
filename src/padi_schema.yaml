@@ -1,0 +1,39 @@
+id: https://github.com/peculiarlibrary/padi-authority-control
+name: PADI_Authority_Control
+title: PADI Authority Control Bureau Schema
+prefixes:
+  padi: https://gitandu.com/padi/
+  skos: http://www.w3.org/2004/02/skos/core#
+  schema: http://schema.org/
+  linkml: https://w3id.org/linkml/
+default_prefix: padi
+
+imports:
+  - linkml:types
+
+enums:
+  PadiDepth:
+    permissible_values:
+      "1": { description: "Surface Level" }
+      "2": { description: "Foundational" }
+      "3": { description: "Operational" }
+      "4": { description: "Advanced" }
+      "5": { description: "Sovereign" }
+
+classes:
+  AuthorityRecord:
+    class_uri: skos:Concept
+    tree_root: true
+    attributes:
+      id: { identifier: true }
+      label: { required: true }
+      depth_index: { range: PadiDepth, required: true }
+      source: { range: string }
+      status: { range: string }
+
+  BureauAgent:
+    class_uri: schema:SoftwareAgent
+    attributes:
+      id: { identifier: true }
+      name: { required: true }
+      mandate: { range: string }
