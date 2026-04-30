@@ -37,3 +37,11 @@ classes:
       id: { identifier: true }
       name: { required: true }
       mandate: { range: string }
+
+  OutreachLog:
+    attributes:
+      id: { identifier: true }
+      target_node: { required: true }
+      timestamp: { required: true }
+      padi_depth_cited: { range: PadiDepth }
+      outcome: { range: string }
