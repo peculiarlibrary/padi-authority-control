@@ -7,7 +7,7 @@ I am **Samuel Muriithi Gitandu**, an Information Science professional and the Fo
 
 ### 🛠️ Current Orchestrations
 *   **Core Logic**: Ontology Engineering (OWL 2, RDF, SHACL) & Knowledge Architecture.
-*   **Agentic Systems**: Developing autonomous A2A protocols via the **PADI Bureau**.
+*   **Agentic Systems**: Developing autonomous A2A protocols via the **[PADI Bureau](https://github.com/peculiarlibrary/padi-authority-control)**.
 *   **Professional Growth**: Participant in the **McKinsey Forward Program** (ID: 2011217A1)[cite: 1].
 
 ### 🛰️ Node Infrastructure
@@ -17,7 +17,7 @@ I am **Samuel Muriithi Gitandu**, an Information Science professional and the Fo
 
 ---
 ### 📊 Semantic Knowledge Graph
-![PADI Bureau Graph](https://github.com/peculiarlibrary/padi-authority-control/raw/main/docs/graph_snapshot.png)
-*(Direct feed from the Sovereign Bureau)*
+![PADI Bureau Graph](https://raw.githubusercontent.com/peculiarlibrary/padi-authority-control/main/docs/graph_snapshot.png)
+*(Direct feed from the Sovereign Bureau technical master)*
 
-[Find the Full Manifesto Here](https://github.com/peculiarlibrary/padi-authority-control/blob/main/MANIFESTO.md)
+[Read the Full Librarian Manifesto Here](https://github.com/peculiarlibrary/padi-authority-control/blob/main/MANIFESTO.md)
