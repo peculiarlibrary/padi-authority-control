@@ -1,0 +1,23 @@
+version: "1.1"
+label: PADI Expanded Skill Taxonomy
+last_updated: "2026-05-01"
+author: "The Peculiar Librarian"
+nodes:
+  - id: skill_information_analysis
+    classification: Foundational LIS
+    context: Karatina University 2019
+  - id: skill_documentation
+    classification: Foundational LIS
+    context: Karatina University 2019
+  - id: skill_indexing
+    classification: Foundational LIS
+    context: Karatina University 2019
+  - id: skill_research
+    classification: Foundational LIS
+    context: Karatina University 2019
+  - id: skill_information_retrieval
+    classification: Foundational LIS
+    context: Karatina University 2019
+  - id: skill_communication
+    classification: Core Professional
+    context: Karatina University & McKinsey Forward
