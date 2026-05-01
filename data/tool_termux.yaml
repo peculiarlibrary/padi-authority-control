@@ -1,0 +1,5 @@
+id: tool_termux
+label: Termux Android
+depth_index: "5"
+source: Sovereign Bureau Architecture
+status: VALID
