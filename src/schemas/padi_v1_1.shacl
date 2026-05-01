@@ -1,0 +1,77 @@
+@prefix padi: <https://gitandu.com/padi/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema1: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema1:SoftwareAgent a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path padi:mandate ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path padi:name ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path padi:id ] ;
+    sh:targetClass schema1:SoftwareAgent .
+
+skos:Concept a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path padi:source ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path padi:label ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path padi:status ],
+        [ sh:in ( "1" "2" "3" "4" "5" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path padi:depth_index ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path padi:id ] ;
+    sh:targetClass skos:Concept .
+
+padi:OutreachLog a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path padi:target_node ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path padi:id ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path padi:timestamp ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path padi:outcome ],
+        [ sh:in ( "1" "2" "3" "4" "5" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path padi:padi_depth_cited ] ;
+    sh:targetClass padi:OutreachLog .
+
+
