@@ -101,6 +101,7 @@ attributes:
     domain_of:
     - AuthorityRecord
     - BureauAgent
+    - OutreachLog
     required: true
   name:
     name: name
@@ -137,6 +138,7 @@ attributes:
     domain_of:
     - AuthorityRecord
     - BureauAgent
+    - OutreachLog
     required: true
   name:
     name: name

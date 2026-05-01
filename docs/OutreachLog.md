@@ -1,10 +1,10 @@
 
 
-# Class: AuthorityRecord 
+# Class: OutreachLog 
 
 
 
-URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
+URI: [padi:OutreachLog](https://gitandu.com/padi/OutreachLog)
 
 
 
@@ -12,26 +12,26 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
 
 ```mermaid
  classDiagram
-    class AuthorityRecord
-    click AuthorityRecord href "../AuthorityRecord/"
-      AuthorityRecord : depth_index
+    class OutreachLog
+    click OutreachLog href "../OutreachLog/"
+      OutreachLog : id
+        
+      OutreachLog : outcome
+        
+      OutreachLog : padi_depth_cited
         
           
     
         
         
-        AuthorityRecord --> "1" PadiDepth : depth_index
+        OutreachLog --> "0..1" PadiDepth : padi_depth_cited
         click PadiDepth href "../PadiDepth/"
     
 
         
-      AuthorityRecord : id
+      OutreachLog : target_node
         
-      AuthorityRecord : label
-        
-      AuthorityRecord : source
-        
-      AuthorityRecord : status
+      OutreachLog : timestamp
         
       
 ```
@@ -41,23 +41,15 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
 
 <!-- no inheritance hierarchy -->
 
-## Class Properties
-
-| Property | Value |
-| --- | --- |
-| Class URI | [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept) |
-| Tree Root | Yes |
-
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [label](label.md) | 1 <br/> [String](String.md) |  | direct |
-| [depth_index](depth_index.md) | 1 <br/> [PadiDepth](PadiDepth.md) |  | direct |
-| [source](source.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [status](status.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [target_node](target_node.md) | 1 <br/> [String](String.md) |  | direct |
+| [timestamp](timestamp.md) | 1 <br/> [String](String.md) |  | direct |
+| [padi_depth_cited](padi_depth_cited.md) | 0..1 <br/> [PadiDepth](PadiDepth.md) |  | direct |
+| [outcome](outcome.md) | 0..1 <br/> [String](String.md) |  | direct |
 
 
 
@@ -91,8 +83,8 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | skos:Concept |
-| native | padi:AuthorityRecord |
+| self | padi:OutreachLog |
+| native | padi:OutreachLog |
 
 
 
@@ -107,50 +99,46 @@ URI: [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)
 
 <details>
 ```yaml
-name: AuthorityRecord
+name: OutreachLog
 from_schema: https://github.com/peculiarlibrary/padi-authority-control
 attributes:
   id:
     name: id
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
-    rank: 1000
     identifier: true
     domain_of:
     - AuthorityRecord
     - BureauAgent
     - OutreachLog
     required: true
-  label:
-    name: label
+  target_node:
+    name: target_node
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
     rank: 1000
     domain_of:
-    - AuthorityRecord
+    - OutreachLog
     required: true
-  depth_index:
-    name: depth_index
+  timestamp:
+    name: timestamp
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
     rank: 1000
     domain_of:
-    - AuthorityRecord
+    - OutreachLog
+    required: true
+  padi_depth_cited:
+    name: padi_depth_cited
+    from_schema: https://github.com/peculiarlibrary/padi-authority-control
+    rank: 1000
+    domain_of:
+    - OutreachLog
     range: PadiDepth
-    required: true
-  source:
-    name: source
+  outcome:
+    name: outcome
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
     rank: 1000
     domain_of:
-    - AuthorityRecord
+    - OutreachLog
     range: string
-  status:
-    name: status
-    from_schema: https://github.com/peculiarlibrary/padi-authority-control
-    rank: 1000
-    domain_of:
-    - AuthorityRecord
-    range: string
-class_uri: skos:Concept
-tree_root: true
 
 ```
 </details>
@@ -159,59 +147,56 @@ tree_root: true
 
 <details>
 ```yaml
-name: AuthorityRecord
+name: OutreachLog
 from_schema: https://github.com/peculiarlibrary/padi-authority-control
 attributes:
   id:
     name: id
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
-    rank: 1000
     identifier: true
     alias: id
-    owner: AuthorityRecord
+    owner: OutreachLog
     domain_of:
     - AuthorityRecord
     - BureauAgent
     - OutreachLog
-  label:
-    name: label
-    from_schema: https://github.com/peculiarlibrary/padi-authority-control
-    rank: 1000
-    alias: label
-    owner: AuthorityRecord
-    domain_of:
-    - AuthorityRecord
     required: true
-  depth_index:
-    name: depth_index
+  target_node:
+    name: target_node
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
     rank: 1000
-    alias: depth_index
-    owner: AuthorityRecord
+    alias: target_node
+    owner: OutreachLog
     domain_of:
-    - AuthorityRecord
+    - OutreachLog
+    required: true
+  timestamp:
+    name: timestamp
+    from_schema: https://github.com/peculiarlibrary/padi-authority-control
+    rank: 1000
+    alias: timestamp
+    owner: OutreachLog
+    domain_of:
+    - OutreachLog
+    required: true
+  padi_depth_cited:
+    name: padi_depth_cited
+    from_schema: https://github.com/peculiarlibrary/padi-authority-control
+    rank: 1000
+    alias: padi_depth_cited
+    owner: OutreachLog
+    domain_of:
+    - OutreachLog
     range: PadiDepth
-    required: true
-  source:
-    name: source
+  outcome:
+    name: outcome
     from_schema: https://github.com/peculiarlibrary/padi-authority-control
     rank: 1000
-    alias: source
-    owner: AuthorityRecord
+    alias: outcome
+    owner: OutreachLog
     domain_of:
-    - AuthorityRecord
+    - OutreachLog
     range: string
-  status:
-    name: status
-    from_schema: https://github.com/peculiarlibrary/padi-authority-control
-    rank: 1000
-    alias: status
-    owner: AuthorityRecord
-    domain_of:
-    - AuthorityRecord
-    range: string
-class_uri: skos:Concept
-tree_root: true
 
 ```
 </details>

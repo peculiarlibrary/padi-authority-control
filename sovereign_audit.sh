@@ -1,32 +1,30 @@
 #!/bin/bash
-# PADI Sovereign Bureau - Bulk Validation Script
 echo "Starting Sovereign Audit of Bureau Records..."
 echo "------------------------------------------"
-
-count=0
-errors=0
+FILES_CHECKED=0
+ERRORS=0
 
 for file in data/*.yaml; do
-    echo -n "Checking $file... "
-    # Determine target class based on filename or content
-    if [[ $file == *"agent"* ]]; then CLASS="BureauAgent"; elif [[ $file == *"log"* ]]; then CLASS="OutreachLog";
+    FILES_CHECKED=$((FILES_CHECKED + 1))
+    
+    if [[ $file == *"data/log_"* ]]; then
+        CLASS="OutreachLog"
+    elif [[ $file == *"agent"* ]]; then
         CLASS="BureauAgent"
     else
         CLASS="AuthorityRecord"
     fi
 
-    if linkml-validate --target-class $CLASS --schema src/padi_schema.yaml "$file" > /dev/null 2>&1; then
-        echo "VALID"
+    linkml-validate --schema src/padi_schema.yaml --target-class $CLASS "$file"
+    
+    if [ $? -eq 0 ]; then
+        echo "Checking $file... VALID"
     else
-        echo "INVALID"
-        ((errors++))
+        echo "Checking $file... INVALID"
+        ERRORS=$((ERRORS + 1))
     fi
-    ((count++))
 done
 
 echo "------------------------------------------"
-echo "Audit Complete: $count files checked, $errors errors found."
-
-if [ $errors -gt 0 ]; then
-    exit 1
-fi
+echo "Audit Complete: $FILES_CHECKED files checked, $ERRORS errors found."
+[ $ERRORS -eq 0 ] || exit 1

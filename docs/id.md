@@ -18,6 +18,7 @@ Alias: id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [BureauAgent](BureauAgent.md) |  |  no  |
+| [OutreachLog](OutreachLog.md) |  |  no  |
 | [AuthorityRecord](AuthorityRecord.md) |  |  no  |
 
 
@@ -32,7 +33,7 @@ Alias: id
 | Property | Value |
 | --- | --- |
 | Range | NONE |
-| Domain Of | [AuthorityRecord](AuthorityRecord.md), [BureauAgent](BureauAgent.md) |
+| Domain Of | [AuthorityRecord](AuthorityRecord.md), [BureauAgent](BureauAgent.md), [OutreachLog](OutreachLog.md) |
 
 ### Cardinality and Requirements
 
@@ -74,6 +75,7 @@ alias: id
 domain_of:
 - AuthorityRecord
 - BureauAgent
+- OutreachLog
 
 ```
 </details>

@@ -14,6 +14,7 @@ Name: PADI_Authority_Control
 | --- | --- |
 | [AuthorityRecord](AuthorityRecord.md) |  |
 | [BureauAgent](BureauAgent.md) |  |
+| [OutreachLog](OutreachLog.md) |  |
 
 
 
@@ -26,8 +27,12 @@ Name: PADI_Authority_Control
 | [label](label.md) |  |
 | [mandate](mandate.md) |  |
 | [name](name.md) |  |
+| [outcome](outcome.md) |  |
+| [padi_depth_cited](padi_depth_cited.md) |  |
 | [source](source.md) |  |
 | [status](status.md) |  |
+| [target_node](target_node.md) |  |
+| [timestamp](timestamp.md) |  |
 
 
 ## Enumerations

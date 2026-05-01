@@ -1,18 +1,12 @@
 #!/bin/bash
-# PADI Bureau Synchronization Engine
-
-echo "Starting Local Build for PADI Authority Control..."
-
-# 1. Generate SHACL (The Validation Firewall)
-python -m linkml.generators.shaclgen src/padi_schema.yaml > project/padi_constraints.ttl
-
-# 2. Generate JSON-LD (The Interoperability Bridge)
-python -m linkml.generators.jsonldcontextgen src/padi_schema.yaml > project/padi_context.jsonld
-
-# 3. Generate Documentation (The Librarian's Audit)
-python -m linkml.generators.docgen src/padi_schema.yaml -d docs/
-
-echo "------------------------------------------------"
-echo "LOCAL ARTIFACTS GENERATED SUCCESSFULLY."
-echo "Check /project for the SHACL shapes."
-echo "------------------------------------------------"
+echo "--- Initiating Sovereign Sync ---"
+./sovereign_audit.sh
+if [ $? -ne 0 ]; then
+    echo "CRITICAL FAILURE: Audit failed. Sync aborted."
+    exit 1
+fi
+echo "Audit PASSED. Synchronizing..."
+git add .
+git commit -m "chore: Bureau synchronization and automated ledger update"
+git push
+echo "--- Sync Complete ---"

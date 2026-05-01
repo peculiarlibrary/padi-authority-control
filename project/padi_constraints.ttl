@@ -14,27 +14,30 @@ schema1:SoftwareAgent a sh:NodeShape ;
             sh:order 2 ;
             sh:path padi:mandate ],
         [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path padi:id ],
+        [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 1 ;
-            sh:path padi:name ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path padi:id ] ;
+            sh:path padi:name ] ;
     sh:targetClass schema1:SoftwareAgent .
 
 skos:Concept a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path padi:source ],
-        [ sh:in ( "1" "2" "3" "4" "5" ) ;
+    sh:property [ sh:in ( "1" "2" "3" "4" "5" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 2 ;
             sh:path padi:depth_index ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path padi:source ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path padi:id ],
         [ sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -43,10 +46,32 @@ skos:Concept a sh:NodeShape ;
         [ sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 1 ;
-            sh:path padi:label ],
+            sh:path padi:label ] ;
+    sh:targetClass skos:Concept .
+
+padi:OutreachLog a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path padi:target_node ],
+        [ sh:in ( "1" "2" "3" "4" "5" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path padi:padi_depth_cited ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path padi:timestamp ],
         [ sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path padi:id ] ;
-    sh:targetClass skos:Concept .
+            sh:path padi:id ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path padi:outcome ] ;
+    sh:targetClass padi:OutreachLog .
 
 

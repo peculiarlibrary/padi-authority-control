@@ -1,5 +1,5 @@
 id: "padi:v3-standard"
-label: "Practice-Area Depth Index v3.0"
-depth_index: 5
-source: "https://zenodo.org/record/18894084"
-status: "Sovereign"
+label: "PADI Technical Standard v3.0"
+depth_index: "5"
+source: "DOI: 10.5281/zenodo.18894084"
+status: "Operational"
