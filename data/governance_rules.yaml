@@ -1,0 +1,22 @@
+version: "1.1"
+bureau_identity: "The Peculiar Librarian"
+governance_mode: "Deterministic"
+
+rules:
+  - id: RULE-001
+    name: "Skill-Resolution-Mandate"
+    constraint: "MUST resolve against JSON-LD context"
+    authority: "https://peculiarlibrarian.github.io/padi-authority-control/"
+    action: "BLOCK if depth_index < required_complexity"
+
+  - id: RULE-002
+    name: "Provenance-Lock"
+    constraint: "MUST append source metadata"
+    required_fields: ["source", "padi_level"]
+    action: "REJECT output if provenance is missing"
+
+  - id: RULE-003
+    name: "Settlement-Guard"
+    constraint: "Manual Commit Required"
+    restricted_states: ["SETTLED"]
+    admin_override: true
