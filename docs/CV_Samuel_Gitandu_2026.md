@@ -28,4 +28,4 @@ Information Scientist with a 2019 academic foundation in Librarianship, speciali
 
 ## THE SOVEREIGN BUREAU (GitHub)
 * **Status**: 27 Validated Semantic Records.
-* **Audit Fingerprint**: [Run sha256sum on taxonomy_v1_1_addendum.yaml and paste here]
+* **Audit Fingerprint**: https://raw.githubusercontent.com/peculiarlibrary/padi-authority-control/main/docs/graph_snapshot.png
