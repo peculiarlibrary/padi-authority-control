@@ -1,0 +1,15 @@
+{
+  "id": "padi:mckinsey-core-skills-2026",
+  "label": "McKinsey Forward Core Skills (Adaptability, Problem Solving, Digital Fluency)",
+  "source": "McKinsey Forward Program Syllabus 2026 (ID: 10459586)",
+  "status": "In-Progress",
+  "padi_depth_cited": "4",
+  "@type": "AuthorityRecord",
+  "@context": {
+    "padi": "https://gitandu.com/padi/",
+    "@vocab": "https://gitandu.com/padi/",
+    "label": "https://gitandu.com/padi/label",
+    "source": "https://gitandu.com/padi/source",
+    "status": "https://gitandu.com/padi/status"
+  }
+}
