@@ -1,0 +1,22 @@
+{
+  "id": "padi:mckinsey-forward-2026",
+  "label": "McKinsey Forward Program (Core Skills Level) - 2026 Cohort",
+  "timestamp": "2026-05-02T10:55:00Z",
+  "padi_depth_cited": "5",
+  "source": "McKinsey.org Forward Acceptance (ID: 10459586)",
+  "status": "Settled",
+  "mandate": "Professional Development & Global Competency",
+  "outcome": "Strategic Dominance in Information Science",
+  "@type": "AuthorityRecord",
+  "@context": {
+    "padi": "https://gitandu.com/padi/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "@vocab": "https://gitandu.com/padi/",
+    "id": "@id",
+    "label": "https://gitandu.com/padi/label",
+    "timestamp": "https://gitandu.com/padi/timestamp",
+    "source": "https://gitandu.com/padi/source",
+    "AuthorityRecord": "skos:Concept"
+  }
+}
