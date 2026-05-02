@@ -1,60 +1,72 @@
 import rdflib
 import os
+import glob
 
 # Initialize the Graph
 g = rdflib.Graph()
 
-# Path to your settled JSON-LD
-data_path = "../data/librarian_tech.jsonld"
+# Define the data directory path
+data_dir = "../data/"
+jsonld_files = glob.glob(os.path.join(data_dir, "*.jsonld"))
 
-if not os.path.exists(data_path):
-    print(f"Error: {data_path} not found. Ensure you have run your serialization script.")
+if not jsonld_files:
+    print(f"Error: No .jsonld files found in {data_dir}.")
     exit(1)
 
-# Load the data
-g.parse(data_path, format="json-ld")
+print(f"--- [ BUREAU COURT: MASS AUDIT OPEN ({len(jsonld_files)} Assets) ] ---")
 
-print("--- [ BUREAU COURT: SESSION OPEN ] ---")
+# Load all assets into the collective reasoning graph
+for file in jsonld_files:
+    try:
+        g.parse(file, format="json-ld")
+        print(f"Evidence Loaded: {os.path.basename(file)}")
+    except Exception as e:
+        print(f"ERROR: Could not parse {file} - {e}")
 
-# 1. Query for Provenance Violations (The Integrity Check)
-print("\n[ JUDICIAL REVIEW: Provenance Check ]")
+# 1. Global Provenance Interrogation (RULE-002)
+print("\n[ JUDICIAL REVIEW: Global Provenance Check ]")
 provenance_query = """
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX padi: <https://peculiarlibrarian.github.io/padi-authority-control/>
-
-SELECT ?subject ?label
+SELECT ?label ?source
 WHERE {
-    ?subject a <https://peculiarlibrarian.github.io/padi-authority-control/AuthorityRecord> .
-    ?subject <https://peculiarlibrarian.github.io/padi-authority-control/label> ?label .
-    FILTER NOT EXISTS { ?subject <https://peculiarlibrarian.github.io/padi-authority-control/source> ?source }
+    ?subject a padi:AuthorityRecord .
+    ?subject padi:label ?label .
+    OPTIONAL { ?subject padi:source ?source }
 }
 """
 
 results = g.query(provenance_query)
-if len(results) == 0:
-    print("Verdict: All records comply with Provenance-Lock (RULE-002).")
-else:
-    for row in results:
-        print(f"VIOLATION: Record '{row.label}' lacks a documented source.")
+compliance_count = 0
+violations = []
 
-# 2. Query for Dependency Chains (The Reasoning Check)
-print("\n[ JUDICIAL REVIEW: Dependency Chains ]")
-# Note: This assumes 'derived_from' or similar linkage exists in your PADI model
+for row in results:
+    if row.source:
+        compliance_count += 1
+    else:
+        violations.append(row.label)
+
+print(f"Verdict: {compliance_count} records SETTLED. {len(violations)} violations found.")
+if violations:
+    for v in violations:
+        print(f"  - VIOLATION: '{v}' lacks a Provenance-Lock.")
+
+# 2. Global Dependency Mapping (Structural Integrity)
+print("\n[ JUDICIAL REVIEW: Multi-Node Dependencies ]")
 dep_query = """
 PREFIX padi: <https://peculiarlibrarian.github.io/padi-authority-control/>
 SELECT ?child_label ?parent_label
 WHERE {
-    ?child <https://peculiarlibrarian.github.io/padi-authority-control/label> ?child_label .
-    ?child <https://peculiarlibrarian.github.io/padi-authority-control/derived_from> ?parent .
-    ?parent <https://peculiarlibrarian.github.io/padi-authority-control/label> ?parent_label .
+    ?child padi:label ?child_label .
+    ?child padi:derived_from ?parent .
+    ?parent padi:label ?parent_label .
 }
 """
 
 dep_results = g.query(dep_query)
 if len(dep_results) == 0:
-    print("Status: No inter-node dependencies currently mapped.")
+    print("Status: No inter-node dependencies detected across the Bureau.")
 else:
     for row in dep_results:
-        print(f"Relationship: {row.child_label} -> Depends on -> {row.parent_label}")
+        print(f"Relationship: {row.child_label} -> Anchored to -> {row.parent_label}")
 
-print("\n--- [ SESSION CLOSED ] ---")
+print("\n--- [ FULL BUREAU AUDIT CLOSED ] ---")
