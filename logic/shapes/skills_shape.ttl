@@ -1,0 +1,12 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix padi: <https://gitandu.com/padi/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+padi:SkillShape
+    a sh:NodeShape ;
+    sh:targetClass padi:AuthorityRecord ;
+    sh:property [
+        sh:path padi:source ;
+        sh:minCount 1 ;
+        sh:pattern "McKinsey.org Forward" ;
+    ] .
