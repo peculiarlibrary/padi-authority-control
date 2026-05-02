@@ -1,6 +1,6 @@
 {
   "id": "padi:librarian-tech-stack-v1",
-  "label": "Librarian Tech Stack (LinkML, SKOS, Dublin Core, JSON-LD)",
+  "label": "Librarian Tech Stack (PADI, MECE, OWL 2, LinkML, SKOS, Dublin Core, JSON-LD, SHACL, SPARQL)",
   "depth_index": "5",
   "source": "PADI Technical Standard v1.1 / Semantic Web Framework",
   "status": "Settled",
@@ -11,6 +11,8 @@
     "padi": "https://gitandu.com/padi/",
     "schema": "http://schema.org/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "sh": "http://www.w3.org/ns/shacl#",
     "@vocab": "https://gitandu.com/padi/",
     "depth_index": {
       "@context": {
@@ -30,37 +32,8 @@
     "status": {
       "@id": "status"
     },
-    "mandate": {
-      "@id": "mandate"
-    },
-    "name": {
-      "@id": "name"
-    },
-    "outcome": {
-      "@id": "outcome"
-    },
-    "padi_depth_cited": {
-      "@context": {
-        "text": "skos:notation",
-        "description": "skos:prefLabel",
-        "meaning": "@id"
-      },
-      "@id": "padi_depth_cited"
-    },
-    "target_node": {
-      "@id": "target_node"
-    },
-    "timestamp": {
-      "@id": "timestamp"
-    },
     "AuthorityRecord": {
       "@id": "skos:Concept"
-    },
-    "BureauAgent": {
-      "@id": "schema:SoftwareAgent"
-    },
-    "OutreachLog": {
-      "@id": "OutreachLog"
     }
   }
 }
