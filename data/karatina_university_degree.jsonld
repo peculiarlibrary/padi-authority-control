@@ -1,0 +1,21 @@
+{
+  "id": "padi:karatina-university-bis-2019",
+  "label": "Bachelor of Information Science (Librarianship) - Karatina University",
+  "timestamp": "2019-12-01T09:00:00Z",
+  "institution": "Karatina University",
+  "degree_type": "Bachelor of Information Science",
+  "specialization": "Librarianship",
+  "source": "Academic Transcript & Certificate (Ref: S. M. Gitandu, 2019)",
+  "status": "Settled",
+  "mandate": "Foundational Academic Authority",
+  "@type": "AuthorityRecord",
+  "@context": {
+    "padi": "https://gitandu.com/padi/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "@vocab": "https://gitandu.com/padi/",
+    "id": "@id",
+    "label": "https://gitandu.com/padi/label",
+    "source": "https://gitandu.com/padi/source",
+    "status": "https://gitandu.com/padi/status"
+  }
+}
