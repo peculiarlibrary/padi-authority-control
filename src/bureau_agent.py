@@ -2,55 +2,39 @@ import rdflib
 import os
 import glob
 
-# Initialize the Liaison's local reasoning capacity
-liaison_graph = rdflib.Graph()
+def generate_integrity_report(target_nodes=31):
+    g = rdflib.Graph()
+    # Explicitly look in the 'data' folder of the current repository root
+    data_dir = "data"
+    
+    if not os.path.exists(data_dir):
+        print(f"[ ERROR ]: Data directory not found at {os.path.abspath(data_dir)}")
+        return
 
-def check_authority(asset_label):
-    """
-    The Liaison Agent requests a settlement check from the Bureau Court.
-    This ensures the 'Agent-to-User' (A2UI) interface remains deterministic.
-    """
-    print(f"\n[ LIAISON AGENT ]: Requesting verification for '{asset_label}'...")
-    
-    # Load all bureau evidence into the Liaison's temporary graph
-    data_dir = "../data/"
     jsonld_files = glob.glob(os.path.join(data_dir, "*.jsonld"))
-    
+    if not jsonld_files:
+        print(f"[ WARNING ]: No .jsonld files found in {data_dir}")
+
     for file in jsonld_files:
         try:
-            liaison_graph.parse(file, format="json-ld")
+            g.parse(file, format="json-ld")
         except Exception as e:
-            pass # Silent failure for malformed files during liaison phase
+            print(f"[ ERROR ]: Failed to parse {file}: {e}")
 
-    # SPARQL Interrogation: Querying gitandu.com/padi/ namespace
-    query = f"""
-    SELECT ?source
-    WHERE {{
-        ?s <https://gitandu.com/padi/label> "{asset_label}" .
-        ?s <https://gitandu.com/padi/source> ?source .
-    }}
-    """
+    # Calculate unique node count (Subjects + Objects)
+    nodes = set(g.subjects()) | set(g.objects())
+    node_count = len(nodes)
     
-    results = liaison_graph.query(query)
+    report_path = "docs/graph_integrity_report_2026-05-02.md"
+    os.makedirs("docs", exist_ok=True)
     
-    if len(results) > 0:
-        for row in results:
-            print(f"--- [ VERIFIED ]: Asset anchored to source: {row.source}")
-            return True
-    else:
-        print(f"--- [ REJECTED ]: Asset '{asset_label}' lacks a verified Provenance-Lock.")
-        return False
+    with open(report_path, "w") as f:
+        f.write(f"# PADI Graph Integrity Report\n\n")
+        f.write(f"- **Lead Architect**: Samuel Muriithi Gitandu\n")
+        f.write(f"- **Actual Nodes**: {node_count}\n")
+        f.write(f"- **Status**: {'VERIFIED' if node_count >= target_nodes else 'INCOMPLETE'}\n")
+    
+    print(f"\n[ LIAISON AGENT ]: Report generated with {node_count} nodes.")
 
-# --- Execution for McKinsey Forward Milestone ---
 if __name__ == "__main__":
-    print("--- [ BUREAU AGENT ORCHESTRATION START ] ---")
-    
-    # Target: The recently settled McKinsey record
-    target = "McKinsey Forward Program (Core Skills Level) - 2026 Cohort"
-    
-    if check_authority(target):
-        print("Liaison Agent Status: Authorized to proceed with McKinsey Milestone Tracking.")
-    else:
-        print("Liaison Agent Status: Halted. Insufficient Authority.")
-        
-    print("\n--- [ ORCHESTRATION COMPLETE ] ---")
+    generate_integrity_report(31)
