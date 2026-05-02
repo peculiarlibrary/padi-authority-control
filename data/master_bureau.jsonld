@@ -1,0 +1,298 @@
+[
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-25",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-13",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-14",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-21",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-28",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-1",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/standard-zenodo-v2",
+    "https://gitandu.com/padi/source": [
+      {
+        "@value": "DOI:10.5281/zenodo.18894084"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-19",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-0",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-22",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-12",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/mckinsey-forward-2026",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "In-Progress"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-9",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-11",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/karatina-university-bis-2019",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Root Authority"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-18",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-4",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-6",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/trust-eeat-audit",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Verified"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/relocation-australia",
+    "https://gitandu.com/padi/target": [
+      {
+        "@value": "ASQA Mapping"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-15",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-8",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-26",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-23",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-2",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-7",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-5",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-10",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-16",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-20",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-3",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-27",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/mckinsey-adaptability-milestone",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Completed"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-29",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-24",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/orchestration-node-17",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Orchestrated"
+      }
+    ]
+  },
+  {
+    "@id": "https://gitandu.com/padi/academic-provenance-verified",
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Confirmed"
+      }
+    ]
+  }
+]
