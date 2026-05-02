@@ -1,0 +1,20 @@
+[
+  {
+    "@id": "https://gitandu.com/padi/milestone/McKinsey_Forward_Adaptability_Module",
+    "https://gitandu.com/padi/label": [
+      {
+        "@value": "McKinsey Forward Adaptability Module"
+      }
+    ],
+    "https://gitandu.com/padi/source": [
+      {
+        "@id": "https://www.mckinsey.com/forward"
+      }
+    ],
+    "https://gitandu.com/padi/status": [
+      {
+        "@value": "Completed"
+      }
+    ]
+  }
+]
