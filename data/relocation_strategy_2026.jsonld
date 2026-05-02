@@ -1,0 +1,13 @@
+{
+  "id": "padi:relocation-strategy-2026",
+  "label": "Strategic Relocation Node (Australia/Europe) - 2026",
+  "source": "S. M. Gitandu Strategic Career Plan 2026",
+  "status": "In-Review",
+  "@type": "AuthorityRecord",
+  "@context": {
+    "padi": "https://gitandu.com/padi/",
+    "@vocab": "https://gitandu.com/padi/",
+    "label": "https://gitandu.com/padi/label",
+    "source": "https://gitandu.com/padi/source"
+  }
+}
