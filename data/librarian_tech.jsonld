@@ -1,39 +1,13 @@
 {
   "id": "padi:librarian-tech-stack-v1",
-  "label": "Librarian Tech Stack (PADI, MECE, OWL 2, LinkML, SKOS, Dublin Core, JSON-LD, SHACL, SPARQL)",
-  "depth_index": "5",
-  "source": "PADI Technical Standard v1.1 / Semantic Web Framework",
-  "status": "Settled",
+  "label": "Librarian Tech Stack (PADI, MECE, OWL 2, SHACL, SPARQL, AGLS, DCAT-AP)",
+  "source": "PADI Technical Standard v1.1 / International Alignment",
+  "status": "In-Review",
   "@type": "AuthorityRecord",
   "@context": {
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "linkml": "https://w3id.org/linkml/",
     "padi": "https://gitandu.com/padi/",
-    "schema": "http://schema.org/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "sh": "http://www.w3.org/ns/shacl#",
     "@vocab": "https://gitandu.com/padi/",
-    "depth_index": {
-      "@context": {
-        "text": "skos:notation",
-        "description": "skos:prefLabel",
-        "meaning": "@id"
-      },
-      "@id": "depth_index"
-    },
-    "id": "@id",
-    "label": {
-      "@id": "label"
-    },
-    "source": {
-      "@id": "source"
-    },
-    "status": {
-      "@id": "status"
-    },
-    "AuthorityRecord": {
-      "@id": "skos:Concept"
-    }
+    "label": "https://gitandu.com/padi/label",
+    "source": "https://gitandu.com/padi/source"
   }
 }
